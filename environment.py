@@ -25,9 +25,9 @@ class MemoryGameEnv:
             self.matched[action1] = True
             self.matched[action2] = True
         done = all(self.matched)
-        reward = 1 if match else -0.1
+        reward = 2.0 if match else -0.2
         obs = self._get_observation()
-        return obs, reward, done, (c1, c2)
+        return obs, reward, done, (action1, c1), (action2, c2)
 
     def valid_actions(self):
         return [i for i, m in enumerate(self.matched) if not m]

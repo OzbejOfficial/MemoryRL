@@ -10,6 +10,8 @@ from config import *
 import torch
 import numpy as np
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 CARD_SIZE = 80
 
 def to_tensor(state, total_cards):

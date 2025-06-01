@@ -34,6 +34,8 @@ class DQNAgent:
         self.eps = EPS_START
         self.output_size = output_size
 
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
     def select_action(self, state_seq, valid_idxs, h=None):
         state_seq = state_seq.to(device)
         self.model.eval()

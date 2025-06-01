@@ -1,0 +1,13 @@
+# config.py
+
+DECK_PAIRS = 6  # You can change to 8 or 12 later
+STATE_SIZE = DECK_PAIRS * 2  # one-hot per card
+BATCH_SIZE = 64
+BUFFER_SIZE = 10000
+GAMMA = 0.99
+LR = 1e-3
+EPS_START = 1.0
+EPS_END = 0.1
+EPS_DECAY = 0.995
+EPISODES = 2000
+TARGET_UPDATE = 10
